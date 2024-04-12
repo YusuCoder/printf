@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:25:53 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/03/21 20:34:29 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:26:31 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,22 @@ int	ft_print_adress(long *p)
 		return (-1);
 	a += ishex_result;
 	return (a);
+}
+
+int	main(void)
+{
+	long	value;
+	int		result;
+
+	value = 12345;
+	result = ft_print_adress(&value);
+	if (result == -1)
+	{
+		printf("Error printing address.\n");
+	}
+	else
+	{
+		printf("Printed %d characters.\n", result);
+	}
+	return (0);
 }
