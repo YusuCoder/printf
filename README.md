@@ -29,10 +29,12 @@
 
 int main(void)
 {
-    char str[] = "Hello from 42-Student!";
-  
-    ft_printf("Test result is: %s\n", str);
-    return (0);
+	char str[] = "Student!";
+	int num = 42;
+	ft_printf("The result is: %d %s\n", num, str);
+	ft_printf("The adress of Student is: %p\n", str);
+	ft_printf("The hexadecimal of 42 is: %x\n", num);
+	return (0);
 }
 ```
 >Compile the ```main.c``` file with the ft_printf library and run the program:
@@ -42,8 +44,9 @@ int main(void)
 ```
 ### The output should be:
 ```
-    The result is: Hello from 42-Student!
-
+    The result is: 42 Student!
+    The adress of Student is: 0x7ff7bb3cb33f
+    The hexadecimal of 42 is: 2a
 ```
 
 ##
