@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 17:51:35 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/04/09 14:20:50 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:02:14 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,4 @@ int	ft_decimal(size_t i, int res)
 	res++;
 	return (res);
 }
+
