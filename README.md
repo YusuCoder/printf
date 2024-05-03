@@ -1,6 +1,6 @@
 # FT_PRINTF
 
-![giff](https://github.com/YusuCoder/printf/blob/master/pics/ScreenRecording2024-04-28at23.36.12-ezgif.com-video-to-gif-converter.gif)
+![giff](https://github.com/YusuCoder/printf/blob/master/pics/ScreenRecording2024-05-03at8.25.16PM-ezgif.com-crop.gif)
 
 >For the ft_printf project of the 42 school core curriculum, we must recreate the famous C library printf function. 
 >This project teaches us about variadic arguments as well as structures if we plan to implement printf's extra flags.
