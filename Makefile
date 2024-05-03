@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 14:16:36 by ryusupov          #+#    #+#              #
-#    Updated: 2024/04/27 17:36:37 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/05/03 20:04:26 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,10 @@ AR = ar rcs
 INCS = ft_printf.h
 RM = rm -f
 
-all: $(NAME)
-	@echo "$(GREEN)$(NAME) \n\n<---------------------------BUILT SUCCESSFULLY!--------------------------->\n"
+all: $(NAME) post_build
+#	@echo "$(GREEN)$(NAME) \n\n<---------------------------BUILT SUCCESSFULLY!--------------------------->\n"
 
 $(NAME): $(OBJ)
-	@echo "$(GREEN)\n<---------------------------BUILDING MANDATORY OBJECTS--------------------------->\n"
 	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c $(INCS)
@@ -40,14 +39,16 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@echo "$(RED) \nCleaning ........................................................................................\n"
+	@echo "$(RED) \nCleaning ................................\n"
 	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
-	@echo "$(GREEN)\n<---------------------------All the object files was successfully deleted!--------------------------->\n"
 
 re: fclean all
-	@echo "$(GREEN)<---------------------------All the object files was deleted and recompiled successfully!--------------------------->\n"
 
-.PHONY: all clean fclean re
+
+.PHONY: all clean fclean re post_build
+
+post_build:
+	@./animated_text.sh
