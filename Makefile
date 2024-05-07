@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 14:16:36 by ryusupov          #+#    #+#              #
-#    Updated: 2024/05/03 20:04:26 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/05/05 20:59:25 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,27 +28,57 @@ AR = ar rcs
 INCS = ft_printf.h
 RM = rm -f
 
-all: $(NAME) post_build
-#	@echo "$(GREEN)$(NAME) \n\n<---------------------------BUILT SUCCESSFULLY!--------------------------->\n"
+define ANIMATE_WELCOME
+    @printf "\n\033[1;32mProcessing"
+    @sleep 1
+    @for i in {1..10}; do \
+        printf "."; \
+        sleep 0.2; \
+    done
+    @printf "\033[0m\n\n\n"
+    @sleep 1
+    @for frame in $(FRAMES); do \
+        printf "\x1b[35m%s\n\033[0m" $$frame; \
+        sleep 0.1; \
+    done
+    @echo
+endef
 
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+define ANIMATE_PROCESSING
+    @printf "\n\033[1;31mCleaning"
+    @sleep 1
+    @for i in {1..10}; do \
+        printf "."; \
+        sleep 0.2; \
+    done
+    @printf "\033[0m\n\n"
+endef
+
+all: $(OBJ)
+	$(ANIMATE_WELCOME)
+	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
 %.o: %.c $(INCS)
-	@echo "$(YELLOW)\n<---------------------------Compiling--------------------------->"
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@echo "$(RED) \nCleaning ................................\n"
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ) $(BONUS_OBJ)
+	$(ANIMATE_PROCESSING)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-
 .PHONY: all clean fclean re post_build
 
-post_build:
-	@./animated_text.sh
+#post_build:
+#	@./animated_text.sh
+
+FRAMES := 	"ss██╗ssssssssssss███████╗████████╗ssssssss██████╗s██████╗s██╗███╗sss██╗████████╗███████╗ssssssssssss██╗ss"\
+			"s██╔╝ssssssssssss██╔════╝╚══██╔══╝ssssssss██╔══██╗██╔══██╗██║████╗ss██║╚══██╔══╝██╔════╝ssssssssssss╚██╗s"\
+			"██╔╝s█████╗█████╗█████╗sssss██║sssssssssss██████╔╝██████╔╝██║██╔██╗s██║sss██║sss█████╗ss█████╗█████╗s╚██╗"\
+			"╚██╗s╚════╝╚════╝██╔══╝sssss██║sssssssssss██╔═══╝s██╔══██╗██║██║╚██╗██║sss██║sss██╔══╝ss╚════╝╚════╝s██╔╝"\
+			"s╚██╗ssssssssssss██║ssssssss██║sss███████╗██║sssss██║ss██║██║██║s╚████║sss██║sss██║sssssssssssssssss██╔╝s"\
+			"ss╚═╝ssssssssssss╚═╝ssssssss╚═╝sss╚══════╝╚═╝sssss╚═╝ss╚═╝╚═╝╚═╝ss╚═══╝sss╚═╝sss╚═╝sssssssssssssssss╚═╝ss"\
+			"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"

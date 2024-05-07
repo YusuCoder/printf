@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:16:30 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/03 20:13:29 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:01:47 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define COLOR_YELLOW "\x1b[33m"
 # define COLOR_BLUE "\x1b[24m"
 # define COLOR_MAGENTA "\x1b[35m"
-# define COLOR_CYAN "\x1b[26m"
+# define COLOR_CYANN "\x1b[26m"
 # define COLOR_WHITE "\x1b[97m"
 # define RESET "\x1b[0m"
 
