@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 14:16:36 by ryusupov          #+#    #+#              #
-#    Updated: 2024/05/05 20:59:25 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/05/08 16:31:31 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ define ANIMATE_PROCESSING
 endef
 
 all: $(OBJ)
-	$(ANIMATE_WELCOME)
+#	$(ANIMATE_WELCOME)
 	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
 %.o: %.c $(INCS)
@@ -63,7 +63,7 @@ all: $(OBJ)
 
 clean:
 	@$(RM) $(OBJ) $(BONUS_OBJ)
-	$(ANIMATE_PROCESSING)
+#	$(ANIMATE_PROCESSING)
 
 fclean: clean
 	@$(RM) $(NAME)
@@ -73,7 +73,7 @@ re: fclean all
 .PHONY: all clean fclean re post_build
 
 #post_build:
-#	@./animated_text.sh
+#	./animated_text.sh
 
 FRAMES := 	"ss██╗ssssssssssss███████╗████████╗ssssssss██████╗s██████╗s██╗███╗sss██╗████████╗███████╗ssssssssssss██╗ss"\
 			"s██╔╝ssssssssssss██╔════╝╚══██╔══╝ssssssss██╔══██╗██╔══██╗██║████╗ss██║╚══██╔══╝██╔════╝ssssssssssss╚██╗s"\
