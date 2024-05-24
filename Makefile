@@ -6,7 +6,7 @@
 #    By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 14:16:36 by ryusupov          #+#    #+#              #
-#    Updated: 2024/05/08 16:31:31 by ryusupov         ###   ########.fr        #
+#    Updated: 2024/05/24 19:47:56 by ryusupov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c ft_putnbr.c ft_ishex.c ft_decimal.c ft_print_adress.c ft_putchar.c ft_putstr.c ft_strlen.c
+SRC = ft_printf.c ft_putnbr.c ft_ishex.c ft_decimal.c ft_print_adress.c ft_putchar.c ft_putstr.c ft_strlength.c
 
 OBJ = $(SRC:.c=.o)
 

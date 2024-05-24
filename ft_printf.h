@@ -6,7 +6,7 @@
 /*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:16:30 by ryusupov          #+#    #+#             */
-/*   Updated: 2024/05/04 15:01:47 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/05/24 19:44:21 by ryusupov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int		ft_putchar(char s);
 int		ft_print_adress(long *p);
 int		ft_decimal(size_t i, int res);
 int		ft_ishex(unsigned long long hex, int num, char uc);
-size_t	ft_strlen(const char *str);
+size_t	ft_strlength(const char *str);
 
 #endif
